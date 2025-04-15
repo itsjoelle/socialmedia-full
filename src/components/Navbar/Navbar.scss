@@ -1,0 +1,239 @@
+@import '../../styles.scss';
+
+.navbar {
+  &.dark {
+    color: $textDarkSoft;
+    background-color: $backgroundDark;
+    box-shadow: $boxshadowDarkEdge;
+  }
+
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #a0153e;
+  width: 100%;
+  box-shadow: $boxshadowLight;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px 0 15px;
+  font-size: 16px;
+  color: #fbeaeb;
+
+  @media (min-width: 850px) {
+    padding: 0 30px 0 30px;
+  }
+
+  .outerContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+
+    &.right {
+      gap: 25px;
+      font-weight: 300;
+
+      @media (max-width: 500px) {
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 559px) {
+      gap: 15px;
+    }
+  }
+
+  .logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    // color: rgb(238 178 218);
+    color: rgb(231 211 225);
+    font-size: 22px;
+    font-weight: 100;
+
+    &.dark {
+      color: $logoDark;
+    }
+  }
+
+  .vertikal {
+    height: 20px;
+    // background: $textLight;
+    background: $textDark;
+    background: #fbeaeb;
+    width: 1px;
+
+    &.dark {
+      background: $textDark;
+    }
+  }
+
+  .search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &-icon {
+      position: absolute;
+      left: 10px;
+      top: 16px;
+      color: $textLight;
+
+      &.dark {
+        color: $textDark;
+      }
+    }
+
+    &-right {
+      display: flex;
+
+      @media (min-width: 1024px) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  .message {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+
+    &-text {
+      @media (max-width: 559px) {
+        display: none;
+      }
+    }
+  }
+
+  .darkmode {
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    letter-spacing: 1px;
+
+    .copy {
+      @media (max-width: 1023px) {
+        display: none;
+      }
+    }
+
+    img {
+      width: 23px;
+    }
+
+    &.icon {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .icon {
+    width: 23px;
+  }
+
+  .notification-right,
+  .email-right {
+    display: flex;
+
+    @media (max-width: 434px) {
+      display: none;
+    }
+  }
+
+  .profile-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+    }
+
+    &-name {
+      @media (max-width: 849px) {
+        display: none;
+      }
+    }
+  }
+
+  .signout {
+    &-container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+
+      span {
+        @media (max-width: 500px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// input search
+input[type='text'] {
+  &:not(#comment, #message, #searchuser) {
+    padding: 5px;
+    font-weight: 300;
+    font-family: 'Roboto';
+    padding-left: 32px;
+    // border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 10px 0px;
+    border-radius: 4px;
+    // min-width: 400px;
+    width: 300px;
+    // min-width: 400px;
+    font-size: 15px;
+    color: $textLight;
+    letter-spacing: 0.5px;
+    outline: none;
+    // background: url(/src/assets/search.svg) no-repeat;
+    background-position: right 370px bottom 4px;
+    background-size: 20px;
+
+    &.dark {
+      background: $backgroundDark;
+      color: $textDarkSoft;
+      box-shadow: $boxShadowDark;
+
+      &:focus {
+        // border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0px 8px 1px #444;
+        border: 1px solid transparent;
+      }
+    }
+
+    &:focus {
+      border: 1px solid rgba(193, 48, 142, 0.4);
+    }
+    @media (max-width: 1023px) {
+      display: none;
+    }
+  }
+}
+
+input.dark::placeholder {
+  color: rgb(211, 211, 211, 0.6);
+}

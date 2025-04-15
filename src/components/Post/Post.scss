@@ -1,0 +1,243 @@
+@import '../../styles.scss';
+
+.card {
+  &.dark {
+    color: $textDarkSoft;
+    background-color: $backgroundDark;
+  }
+
+  color: $textLight;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $backgroundLight;
+  box-shadow: $boxshadowLightElement;
+  width: calc(100% - 20px);
+  max-width: 850px;
+  max-width: 850px;
+  max-height: unset;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 4px;
+}
+
+.post {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &-name {
+    font-weight: 500;
+    font-size: 16px;
+
+    @media (max-width: 1023px) {
+      font-size: 15px;
+    }
+  }
+
+  &-outerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.delete-icon {
+  cursor: pointer;
+}
+
+.profilepicture {
+  cursor: pointer;
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.user-name {
+  cursor: pointer;
+}
+
+.postImage {
+  img {
+    width: 100%;
+  }
+}
+
+.title {
+  font-size: 15px;
+  line-height: 19px;
+  padding: 0 10px;
+
+  @media (max-width: 1023px) {
+    font-size: 14px;
+  }
+}
+
+.reactions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  &-outerContainer {
+    overflow: hidden;
+    height: 40px;
+  }
+
+  &-container {
+    display: flex;
+    font-weight: 300;
+    font-size: 14px;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 1023px) {
+      font-size: 13px;
+    }
+  }
+}
+
+.likes {
+  svg {
+    cursor: pointer;
+  }
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.comments {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.input-container {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 3px;
+
+  .add {
+    cursor: pointer;
+    border-radius: 4px;
+    width: 35px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #3399ff;
+  }
+}
+
+.comment {
+  &-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .posted {
+      font-size: 14px;
+      font-weight: 300;
+      @media (max-width: 1023px) {
+        font-size: 13px;
+      }
+    }
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 19px;
+
+    @media (max-width: 1023px) {
+      font-size: 14px;
+    }
+  }
+
+  &-outerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+  }
+}
+button {
+  color: #3399ff;
+  font-family: 'Roboto';
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #3399ff;
+  border-radius: 4px;
+  width: 65px;
+  height: 25px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-size: 11px;
+  line-height: 13px;
+
+  &:hover {
+    letter-spacing: 2px;
+    transition: all 0.5s;
+  }
+
+  &.dark {
+    background-color: #222;
+  }
+}
+
+input[type='text'] {
+  &:not(#search, #message, #searchuser) {
+    padding: 5px;
+    font-weight: 300;
+    font-family: 'Roboto';
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 10px 0px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+    height: 30px;
+
+    font-size: 15px;
+    color: $textLight;
+    letter-spacing: 0.5px;
+    outline: none;
+    background-position: right 370px bottom 4px;
+    background-size: 20px;
+
+    &.dark {
+      background: $backgroundDark;
+      color: $textDarkSoft;
+      box-shadow: $boxShadowDark;
+
+      &:focus {
+        box-shadow: 0 0px 8px 1px #444;
+        border: 1px solid transparent;
+      }
+    }
+
+    &:focus {
+      border: 1px solid rgba(193, 48, 142, 0.4);
+    }
+  }
+}

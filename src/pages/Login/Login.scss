@@ -1,0 +1,149 @@
+@import '../../styles.scss';
+.login {
+  display: flex;
+  gap: 50px;
+  padding-left: 175px;
+  border-radius: 4px;
+  width: 100%;
+
+  &-page {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+  }
+
+  &-user-pass {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button {
+    &-signIn {
+      background: linear-gradient(
+        to right,
+        rgb(213 96 130),
+        rgb(167 7 54 / 91%)
+      );
+
+      color: #fff;
+      border: none;
+      width: 100%;
+      height: 40px;
+    }
+
+    &-google {
+      border: 1px solid rgb(180 176 176);
+      color: grey;
+      width: 100%;
+      position: relative;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.5px;
+
+      &:hover {
+        letter-spacing: 1px;
+        transition: all 0.5s;
+      }
+
+      img {
+        width: 24px;
+        position: absolute;
+        left: 35px;
+      }
+    }
+  }
+
+  &-title {
+    font-size: 19px;
+    font-weight: 300;
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+  }
+
+  &-divider {
+    width: 1px;
+    height: 290px;
+    align-self: center;
+    background-color: rgba(128, 128, 128, 0.401);
+  }
+
+  .input-login {
+    background-color: rgb(136 95 107 / 5%);
+    border: none;
+    border-radius: 4px;
+    height: 40px;
+    padding-left: 10px;
+
+    &:focus-visible {
+      outline: 1px solid #a0153e;
+    }
+  }
+
+  &-error-message {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}
+
+.left-container {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  justify-content: end;
+}
+
+.right-container {
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgb(182 34 77 / 93%), rgb(111 6 36));
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 50px;
+  color: rgb(231, 211, 225);
+  font-size: 40px;
+  font-weight: 100;
+  padding: 0 30px;
+  padding-top: 259px;
+}
+
+.logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 72px;
+}
+
+.vertikal {
+  height: 50px;
+  width: 1px;
+  background: rgb(231, 211, 225);
+}
+
+.getconnected {
+  text-align: center;
+  max-width: 400px;
+
+  &-container {
+    display: flex;
+  }
+
+  &-icon {
+    position: relative;
+    bottom: 10px;
+  }
+}

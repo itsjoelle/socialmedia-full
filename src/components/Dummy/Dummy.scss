@@ -1,0 +1,30 @@
+@import '../../styles.scss';
+
+.dummy {
+  flex: 5.8;
+  height: calc(100vh - 70px);
+  position: sticky;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+
+  .container {
+    margin: 40px 10%;
+    display: flex;
+
+    @media (max-width: 1023px) {
+      margin: 40px 20px;
+    }
+
+    h1 {
+      font-weight: 500;
+    }
+
+    .path {
+      display: inline-block;
+    }
+    .path::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}

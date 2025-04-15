@@ -1,0 +1,11 @@
+@import './styles.scss';
+
+.layout {
+  &-innerContainer {
+    background-color: rgba(255, 241, 243, 0.2);
+    display: flex;
+    &.dark {
+      background-color: $backgroundDarkSoft;
+    }
+  }
+}

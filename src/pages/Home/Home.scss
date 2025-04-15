@@ -1,0 +1,11 @@
+@import '../../styles.scss';
+
+.home {
+  flex: 5.8;
+  height: calc(100vh - 70px);
+  position: sticky;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

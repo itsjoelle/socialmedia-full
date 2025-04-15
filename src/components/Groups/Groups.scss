@@ -1,0 +1,96 @@
+@import '../../styles.scss';
+
+.groups {
+  flex: 5.8;
+  height: calc(100vh - 70px);
+  position: sticky;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+
+  .container {
+    margin: 40px 10%;
+
+    @media (max-width: 1023px) {
+      margin: 40px 20px;
+    }
+
+    h1 {
+      font-weight: 500;
+
+      &.dark {
+        color: $textDark;
+        font-weight: 400;
+      }
+    }
+
+    .sectionOuterContainer {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 300px);
+      gap: 35px;
+    }
+
+    .sectionContainer {
+      display: flex;
+      position: relative;
+      align-items: flex-start;
+      gap: 20px;
+      box-shadow: $boxshadowLightElement;
+      padding: 15px;
+      border-radius: 6px;
+      width: 300px;
+
+      &.dark {
+        box-shadow: $boxshadowDarkElement;
+        background-color: #222;
+      }
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    .groupContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+      width: 100%;
+
+      &.dark {
+        color: $textDarkSoft;
+      }
+    }
+
+    .leaveGroup {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      cursor: pointer;
+
+      &-text {
+        font-size: 13px;
+        color: $textLightOpacity;
+        align-self: flex-end;
+
+        &.dark {
+          color: rgba($textDarkSoft, 0.7);
+        }
+      }
+
+      &-icon {
+        align-items: center;
+        display: flex;
+      }
+    }
+
+    .leaveGroupIcon {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+  }
+}

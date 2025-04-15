@@ -1,0 +1,85 @@
+@import '../../App.scss';
+@import '../../styles.scss';
+
+.menubar {
+  @media (max-width: 849px) {
+    display: none;
+  }
+  &.dark {
+    color: $textDarkSoft;
+    background-color: $backgroundDark;
+    box-shadow: $boxshadowDarkEdge;
+  }
+
+  padding: 30px 20px 0 20px;
+  top: 70px;
+  height: calc(100vh - 70px);
+  position: sticky;
+  background-color: white;
+  z-index: 1;
+  box-shadow: $boxshadowLight;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  color: $textLight;
+
+  @media (max-width: 1023px) {
+    font-size: 14px;
+  }
+
+  flex: 1.2;
+  overflow: scroll;
+
+  .outerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &:not(:first-child) {
+      margin-top: 50px;
+    }
+
+    .headline {
+      letter-spacing: 1px;
+      color: $textLightBright;
+
+      &.dark {
+        color: $textDark;
+      }
+
+      &.container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  }
+
+  .innerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .category {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    width: fit-content;
+
+    img {
+      width: 25px;
+    }
+  }
+
+  .separator {
+    background-color: lightgrey;
+    height: 1px;
+    margin: 30px 0;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

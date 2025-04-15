@@ -1,0 +1,23 @@
+.transparent {
+  background-color: rgba(0, 0, 0, 0.08);
+  width: calc(100% - 115px);
+  height: 2px;
+
+  &:after {
+    display: block;
+    content: '';
+    background-color: rgb(162, 18, 141, 0.4);
+    width: 50%;
+    height: 2px;
+  }
+
+  &.dark {
+    &:after {
+      background-color: rgb(221, 130, 191, 0.4);
+    }
+  }
+
+  &.is-menubar {
+    width: calc(100% - 66px);
+  }
+}

@@ -1,0 +1,245 @@
+@import '../../styles.scss';
+
+.chat {
+  &.dark {
+    color: $textDark;
+  }
+
+  &-background {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-listContainer {
+    display: flex;
+    height: 100%;
+  }
+
+  &-innerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    bottom: 48px;
+
+    @media (max-width: 719px) {
+      width: 100%;
+      bottom: 0;
+    }
+  }
+
+  &-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    gap: 20px;
+  }
+
+  &-timeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 5px;
+  }
+
+  &-time {
+    font-size: 12px;
+  }
+
+  &-space {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 2;
+    background-color: #ffffff;
+    padding: 10px 5px 0;
+    border-radius: 5px;
+
+    &.dark {
+      background-color: #333;
+    }
+  }
+
+  &-window {
+    overflow: scroll;
+  }
+
+  &-outerContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-modal {
+    background-color: #e3e1e1;
+    width: 800px;
+    height: 610px;
+    padding: 15px;
+    padding-top: 60px;
+    border-radius: 5px;
+
+    @media (max-width: 1023px) {
+      width: 700px;
+    }
+
+    @media (max-width: 719px) {
+      width: 350px;
+    }
+
+    &.dark {
+      background-color: #222;
+    }
+  }
+
+  &-backIcon {
+    position: relative;
+    top: 5px;
+    right: 5px;
+    display: none;
+
+    @media (max-width: 719px) {
+      display: inline;
+    }
+  }
+  &-chatPartner {
+    position: absolute;
+    top: 18px;
+    left: 270px;
+    font-weight: 500;
+    font-size: 21px;
+
+    &.dark {
+      color: #d3d3d3;
+    }
+
+    @media (max-width: 719px) {
+      left: 20px;
+    }
+  }
+
+  &-divider {
+    width: 1px;
+    height: 45px;
+    background: rgba(160, 21, 62, 0.5);
+    position: absolute;
+    left: 260px;
+    top: 8px;
+
+    &.dark {
+      background: rgba(211, 211, 211, 0.5);
+    }
+
+    @media (max-width: 719px) {
+      display: none;
+    }
+  }
+
+  &-close {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+    top: 15px;
+
+    @media (max-width: 719px) {
+      margin-right: 10px;
+    }
+  }
+
+  .message {
+    &-form {
+      display: flex;
+      align-items: center;
+    }
+
+    &-send {
+      transform: rotate(-30deg);
+      position: relative;
+      bottom: 4px;
+      width: unset;
+      border: none;
+      background-color: #fff;
+
+      &.dark {
+        background-color: #333;
+      }
+    }
+  }
+
+  .scrollContainer {
+    overflow: scroll;
+  }
+}
+
+input[type='text'] {
+  &:not(#comment, #searchuser, #search) {
+    width: calc(100% - 50px);
+    height: 40px;
+    border-radius: 5px;
+    margin: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 10px;
+    outline: none;
+    font-size: 12px;
+    font-weight: 100;
+
+    &:focus {
+      border: 1px solid rgba(160, 21, 62, 0.4);
+    }
+
+    &.dark {
+      background: $backgroundDark;
+      color: $textDarkSoft;
+      box-shadow: $boxShadowDark;
+
+      &:focus {
+        box-shadow: 0 0px 8px 1px #444;
+        border: 1px solid transparent;
+      }
+    }
+  }
+}
+input[type='text'] {
+  &:not(#comment, #message, #search) {
+    width: calc(100% - 15px);
+    height: 38px;
+    border-radius: 5px;
+    margin-top: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 10px;
+
+    &:focus {
+      border: 1px solid rgba(160, 21, 62, 0.4);
+      outline: none;
+    }
+
+    &.dark {
+      background: $backgroundDark;
+      color: $textDarkSoft;
+      box-shadow: $boxShadowDark;
+
+      &:focus {
+        box-shadow: 0 0px 8px 1px #444;
+        border: 1px solid transparent;
+      }
+    }
+
+    @media (max-width: 719px) {
+      width: 100%;
+    }
+  }
+}
